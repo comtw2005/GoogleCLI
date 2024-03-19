@@ -36,10 +36,37 @@ Create Cluster
 
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/392297fb-5676-428e-817e-bad57f6c250d)
 
+處裡錯誤訊息
+不知道是不是測試用所以資源不足, 全部用最低階才過
 
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/7f058181-fb92-469a-87f6-97f2ad6ff88a)
 
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/4db07803-94d5-41df-9cc5-1d8c75947b5e)
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/140dddcf-a24e-497e-99c2-cd7f0d883842)
+
+錯誤處理結束
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/4c4cc237-09e6-4384-9e7b-885c5b48b1a5)
+
+叢集警告
+
+Failed to validate permissions required for google cloud dataproc service agent service account: 'service-661587143193@dataproc-accounts.iam.gserviceaccount.com'. Cluster creation could still be successful if required permissions have been granted to the respective service accounts as mentioned in the document https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#dataproc_service_accounts_2.
+For PD-Standard without local SSDs, we strongly recommend provisioning 1TB or larger to ensure consistently high I/O performance. See https://cloud.google.com/compute/docs/disks/performance for information on disk I/O performance.
+Permissions are missing for the default service account '661587143193-compute@developer.gserviceaccount.com', missing permissions: [storage.buckets.get, storage.objects.create, storage.objects.delete, storage.objects.get, storage.objects.list, storage.objects.update] on the project 'projects/unified-runner-411615'. This usually happens when a custom resource (ex: custom staging bucket) or a user-managed VM Service account has been provided and the default/user-managed service account hasn't been granted enough permissions on the resource. See https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#VM_service_account.
+The firewall rules for specified network or subnetwork would allow ingress traffic from 0.0.0.0/0, which could be a security risk.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
