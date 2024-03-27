@@ -33,6 +33,7 @@ gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 .
 
 
 comtw2006@cloudshell:~ (unified-runner-411615)$ gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 .
+```
 Creating temporary tarball archive of 31 file(s) totalling 33.7 KiB before compression.
 Uploading tarball of [.] to [gs://unified-runner-411615_cloudbuild/source/1711471485.134728-896700bb46fd42a7bf3222a65d01d77d.tgz]
 API [cloudbuild.googleapis.com] not enabled on project [unified-runner-411615]. Would you like to enable and retry (this will take a few minutes)? (y/N)?  y
@@ -81,11 +82,12 @@ DURATION: 25S
 SOURCE: gs://unified-runner-411615_cloudbuild/source/1711471485.134728-896700bb46fd42a7bf3222a65d01d77d.tgz
 IMAGES: gcr.io/unified-runner-411615/monolith:1.0.0
 STATUS: SUCCESS
-
+```
 
 
 
 comtw2006@cloudshell:~ (unified-runner-411615)$ gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 --platform managed
+```
 Service name (monolith):  monolith
 Please specify a region:
  [1] africa-south1
@@ -145,6 +147,7 @@ ERROR: (gcloud.run.deploy) Revision 'monolith-00001-sb7' is not ready and cannot
 
 Logs URL: https://console.cloud.google.com/logs/viewer?project=unified-runner-411615&resource=cloud_run_revision/service_name/monolith/revision_name/monolith-00001-sb7&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22monolith%22%0Aresource.labels.revision_name%3D%22monolith-00001-sb7%22 
 For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start
+```
 comtw2006@cloudshell:~ (unified-runner-411615)$ 
 
 
