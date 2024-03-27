@@ -4,6 +4,7 @@ https://medium.com/@blaze0207/google-cloud-build-%E6%95%99%E5%AD%B8-%E4%B8%80-ed
 
 
 comtw2006@cloudshell:~ (unified-runner-411615)$ docker build . --tag=test1
+```
 [+] Building 2.3s (7/7) FINISHED                                                                                                                    docker:default
  => [internal] load build definition from Dockerfile                                                                                                          0.0s
  => => transferring dockerfile: 93B                                                                                                                           0.0s
@@ -24,7 +25,7 @@ comtw2006@cloudshell:~ (unified-runner-411615)$ docker build . --tag=test1
  => => exporting layers                                                                                                                                       0.0s
  => => writing image sha256:e5c4fb3d5a85e5295bbaf55ac8cc9b57cddef953fa49f1286cfb17d3309b8471                                                                  0.0s
  => => naming to docker.io/library/test1                     
-
+```
 
 gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 .
 
