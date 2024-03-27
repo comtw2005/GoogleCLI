@@ -191,6 +191,190 @@ IAM 權限控管
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/83fe8d83-5ec2-4bdc-8b70-e06754a90362)
 
 
+再來一次
+
+comtw2006@cloudshell:~ (unified-runner-411615)$ docker build . --tag=test1
+```
+[+] Building 2.5s (7/7) FINISHED                                                                                                                                              docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                    0.0s
+ => => transferring dockerfile: 93B                                                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/alpine:latest                                                                                                                        1.7s
+ => [internal] load .dockerignore                                                                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                                                         0.0s
+ => [internal] load build context                                                                                                                                                       0.0s
+ => => transferring context: 92B                                                                                                                                                        0.0s
+ => [1/2] FROM docker.io/library/alpine:latest@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b                                                                  0.6s
+ => => resolve docker.io/library/alpine:latest@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b                                                                  0.0s
+ => => sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b 1.64kB / 1.64kB                                                                                          0.0s
+ => => sha256:6457d53fb065d6f250e1504b9bc42d5b6c65941d57532c072d929dd0628977d0 528B / 528B                                                                                              0.0s
+ => => sha256:05455a08881ea9cf0e752bc48e61bbd71a34c029bb13df01e40e3e70e0d007bd 1.47kB / 1.47kB                                                                                          0.0s
+ => => sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8 3.41MB / 3.41MB                                                                                          0.4s
+ => => extracting sha256:4abcf20661432fb2d719aaf90656f55c287f8ca915dc1c92ec14ff61e67fbaf8                                                                                               0.1s
+ => [2/2] COPY quickstart.sh /                                                                                                                                                          0.0s
+ => exporting to image                                                                                                                                                                  0.0s
+ => => exporting layers                                                                                                                                                                 0.0s
+ => => writing image sha256:058c556b3659ae11bd52b0200734294254d11055fe3673c47d97f7a2a062896f                                                                                            0.0s
+ => => naming to docker.io/library/test1                                    
+```
+
+
+comtw2006@cloudshell:~ (unified-runner-411615)$ gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/test1_builds
+```
+Creating temporary tarball archive of 34 file(s) totalling 37.3 KiB before compression.
+Uploading tarball of [.] to [gs://unified-runner-411615_cloudbuild/source/1711550673.434757-073348f606fc479baad3a908f8f451eb.tgz]
+Created [https://cloudbuild.googleapis.com/v1/projects/unified-runner-411615/locations/global/builds/095b083d-7bab-4bd4-a5b3-e7a5bc34f65c].
+Logs are available at [ https://console.cloud.google.com/cloud-build/builds/095b083d-7bab-4bd4-a5b3-e7a5bc34f65c?project=661587143193 ].
+------------------------------------------------------------------------------------ REMOTE BUILD OUTPUT ------------------------------------------------------------------------------------
+starting build "095b083d-7bab-4bd4-a5b3-e7a5bc34f65c"
+
+FETCHSOURCE
+Fetching storage object: gs://unified-runner-411615_cloudbuild/source/1711550673.434757-073348f606fc479baad3a908f8f451eb.tgz#1711550674398187
+Copying gs://unified-runner-411615_cloudbuild/source/1711550673.434757-073348f606fc479baad3a908f8f451eb.tgz#1711550674398187...
+/ [1 files][  8.1 KiB/  8.1 KiB]                                                
+Operation completed over 1 objects/8.1 KiB.
+BUILD
+Already have image (with digest): gcr.io/cloud-builders/docker
+Sending build context to Docker daemon  73.73kB
+Step 1/3 : FROM alpine
+latest: Pulling from library/alpine
+Digest: sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+Status: Downloaded newer image for alpine:latest
+ 05455a08881e
+Step 2/3 : COPY quickstart.sh /
+ 6f2764f78ef3
+Step 3/3 : CMD ["/quickstart.sh"]
+ Running in cc547a09ae78
+Removing intermediate container cc547a09ae78
+ 0ff21206c193
+Successfully built 0ff21206c193
+Successfully tagged gcr.io/unified-runner-411615/test1_builds:latest
+PUSH
+Pushing gcr.io/unified-runner-411615/test1_builds
+The push refers to repository [gcr.io/unified-runner-411615/test1_builds]
+8997af9e23a3: Preparing
+d4fc045c9e3a: Preparing
+d4fc045c9e3a: Layer already exists
+8997af9e23a3: Pushed
+latest: digest: sha256:5f7a3b49d88608cb01638be49cb4b6f5772df504231990ca2a491b3ba4728e23 size: 735
+DONE
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ID: 095b083d-7bab-4bd4-a5b3-e7a5bc34f65c
+CREATE_TIME: 2024-03-27T14:44:34+00:00
+DURATION: 11S
+SOURCE: gs://unified-runner-411615_cloudbuild/source/1711550673.434757-073348f606fc479baad3a908f8f451eb.tgz
+IMAGES: gcr.io/unified-runner-411615/test1_builds (+1 more)
+STATUS: SUCCESS
+```
+
+comtw2006@cloudshell:~ (unified-runner-411615)$ cat Dockerfile 
+
+```
+FROM alpine
+COPY quickstart.sh /
+CMD ["/quickstart.sh"]
+```
+
+comtw2006@cloudshell:~ (unified-runner-411615)$ docker build .
+```
+[+] Building 0.6s (7/7) FINISHED                                                                                                                                              docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                    0.0s
+ => => transferring dockerfile: 93B                                                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/alpine:latest                                                                                                                        0.6s
+ => [internal] load .dockerignore                                                                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                                                         0.0s
+ => [1/2] FROM docker.io/library/alpine:latest@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b                                                                  0.0s
+ => [internal] load build context                                                                                                                                                       0.0s
+ => => transferring context: 34B                                                                                                                                                        0.0s
+ => CACHED [2/2] COPY quickstart.sh /                                                                                                                                                   0.0s
+ => exporting to image                                                                                                                                                                  0.0s
+ => => exporting layers                                                                                                                                                                 0.0s
+ => => writing image sha256:058c556b3659ae11bd52b0200734294254d11055fe3673c47d97f7a2a062896f          
+```
+
+comtw2006@cloudshell:~ (unified-runner-411615)$ gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/test1_builds --platform managed
+```
+Service name (test1builds):  test1builds
+Please specify a region:
+ [1] africa-south1
+ [2] asia-east1
+ [3] asia-east2
+ [4] asia-northeast1
+ [5] asia-northeast2
+ [6] asia-northeast3
+ [7] asia-south1
+ [8] asia-south2
+ [9] asia-southeast1
+ [10] asia-southeast2
+ [11] australia-southeast1
+ [12] australia-southeast2
+ [13] europe-central2
+ [14] europe-north1
+ [15] europe-southwest1
+ [16] europe-west1
+ [17] europe-west10
+ [18] europe-west12
+ [19] europe-west2
+ [20] europe-west3
+ [21] europe-west4
+ [22] europe-west6
+ [23] europe-west8
+ [24] europe-west9
+ [25] me-central1
+ [26] me-central2
+ [27] me-west1
+ [28] northamerica-northeast1
+ [29] northamerica-northeast2
+ [30] southamerica-east1
+ [31] southamerica-west1
+ [32] us-central1
+ [33] us-east1
+ [34] us-east4
+ [35] us-east5
+ [36] us-south1
+ [37] us-west1
+ [38] us-west2
+ [39] us-west3
+ [40] us-west4
+ [41] cancel
+Please enter numeric choice or text value (must exactly match list item):  2
+
+To make this the default region, run `gcloud config set run/region asia-east1`.
+
+Allow unauthenticated invocations to [test1builds] (y/N)?  y
+
+Deploying container to Cloud Run service [test1builds] in project [unified-runner-411615] region [asia-east1]
+X  Deploying new service...                                                                                                                                                                  
+  -  Creating Revision...                                                                                                                                                                    
+  .  Routing traffic...                                                                                                                                                                      
+  OK Setting IAM Policy...                                                                                                                                                                   
+Deployment failed                                                                                                                                                                            
+ERROR: (gcloud.run.deploy) Revision 'test1builds-00001-6dr' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.
+
+Logs URL: https://console.cloud.google.com/logs/viewer?project=unified-runner-411615&resource=cloud_run_revision/service_name/test1builds/revision_name/test1builds-00001-6dr&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22test1builds%22%0Aresource.labels.revision_name%3D%22test1builds-00001-6dr%22 
+For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start
+
+```
+查看log
+https://console.cloud.google.com/logs/viewer?project=unified-runner-411615&resource=cloud_run_revision/service_name/test1builds/revision_name/test1builds-00001-6dr&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22test1builds%22%0Aresource.labels.revision_name%3D%22test1builds-00001-6dr%22 
+
+可以看到 quickstart.sh 執行的內容
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/be1d3e0d-7ff3-416d-961a-e6d468a9a600)
+
+
+
+quickstart.sh
+```
+#!/bin/sh
+echo "Hello, world! The time is $(date)."
+```
+
+
+
+
+
+
+
+
 
 
 
