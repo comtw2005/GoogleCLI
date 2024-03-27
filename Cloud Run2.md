@@ -155,6 +155,43 @@ comtw2006@cloudshell:~ (unified-runner-411615)$
 
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/dd48d132-83cf-4644-aec7-e1abce3732bd)
 
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/fd039921-d86f-4d2d-8cc0-1da98ae02970)
+
+IAM 權限控管
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/f3bbb8c2-a9d0-4852-9700-4dd646c0c0a4)
+
+用手動輸入
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/26b71515-8dce-4781-8388-026bf52cfd94)
+
+結果不行
+無法部署修訂版本
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/c26f8089-f0e1-4540-9db1-206e2d178386)
+
+建立新的服務帳戶
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/fe1d2bd4-5da9-41e4-8110-49ae98d154c8)
+
+服務帳戶詳細資料
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/0eda270a-6122-4744-a6a7-0b3fe972457a)
+
+將專案存取權授予這個服務帳戶 (選用)
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/1ff4fb8b-b0cb-439e-872c-ee2c1171b4a4)
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/c11e49fa-921b-412e-ab2d-139926a6abe3)
+
+又有問題
+
+ Revision 'monolith-00002-xp9' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information. Logs URL: 開啟 Cloud Logging  For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start 
+
+![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/83fe8d83-5ec2-4bdc-8b70-e06754a90362)
+
+
+
 
 
 
