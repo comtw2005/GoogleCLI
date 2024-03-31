@@ -108,6 +108,27 @@ gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/searchbuilds --platform
 
 ```
 
+列出 Google Storage 的檔案
+```
+gsutil ls gs://your-bucket/
+```
+
+將檔案複製到目前路徑下
+```
+gsutil cp gs://your-bucket/your-file .
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
