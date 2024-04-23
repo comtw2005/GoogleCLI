@@ -236,6 +236,34 @@ gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/dockerimage20240418 --p
 
    
 
+@@@@@@@@@@@@@@@@@@@@
+
+列出所有 docker 內的 image
+
+docker image ls 
+
+把image匯出並存成 .tar
+
+docker save  couchdb12 > couchdb12.tar
+
+把tar檔案匯入 docker 內
+
+cat [tar file] | docker import - [image name]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
