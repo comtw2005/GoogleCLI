@@ -74,6 +74,7 @@ comtw2006@cloudshell:~ (unified-runner-411615)$ docker build . --tag=test0418
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/29ed49fa-b1b2-4c6e-96c0-ec8a1c0366aa)
 
 3.1 要先登入 gcloud auth login
+
 ```
 comtw2006@cloudshell:~ (unified-runner-411615)$ gcloud auth login
 
@@ -100,10 +101,21 @@ FROM openjdk:17-jdk
 ```
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/a8b500f1-a655-4b18-bbee-7389f537b311)
 
+可能會出現
+```
+ERROR: (gcloud.config.set) The project property must be set to a valid project ID, [=unified-runner-411615] is not a valid project ID.
+To set your project, run:
+
+  $ gcloud config set project PROJECT_ID
+```
+執行 gcloud config set project unified-runner-411615 設定環境變數
 
 3.3 提交一個包含 Dockerfile 的目錄，並建立一個 Docker 映像。
+
 gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/dockerimage20240418
+
 指令解析
+將image建置到Registry
 
     gcloud: Google Cloud SDK 的命令列工具
     builds: Cloud Build 服務相關的命令
