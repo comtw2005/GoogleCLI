@@ -32,9 +32,6 @@ https://console.cloud.google.com/gen-app-builder/start?hl=zh-TW&project=unified-
 
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/842006bb-360a-4590-8689-4718e173d927)
 
-![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/51bf6547-6e75-4ceb-bff4-bd0c8e624237)
-
-
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/b13266fd-93cc-4216-9224-98001d624d9f)
 
 ![圖片](https://github.com/comtw2005/GoogleCLI/assets/46416652/b1d06c1a-9978-4dd2-afe6-e65b8fc7cf41)
